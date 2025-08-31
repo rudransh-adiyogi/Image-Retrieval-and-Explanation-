@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+jinja2
+python-dotenv
+groq
+torch
+torchvision
+git+https://github.com/openai/CLIP.git
+faiss-cpu
+Pillow
+numpy
+requests
+transformers==4.44.2
+safetensors
+python-multipart
