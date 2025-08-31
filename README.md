@@ -4,6 +4,7 @@ This project implements an end-to-end image retrieval and explanation pipeline u
 ## 📂 Project Structure
 '''
 📦 project-root
+
 ├── 📂 app # FastAPI backend + frontend (HTML+JS)
 
  └── 📂 models # Pre-trained models (CLIP, BLIP, etc.)
