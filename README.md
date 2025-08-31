@@ -96,6 +96,20 @@ The system consists of two main pipelines:
 
             6. Open http://localhost:8000 in your browser.
 
+## Results 
+
+<img width="774" height="385" alt="image" src="https://github.com/user-attachments/assets/1f9d97d3-cd42-4a83-a53d-ec7255de8abd" />
+
+<img width="734" height="425" alt="image" src="https://github.com/user-attachments/assets/2630d3ed-5a09-4cda-b774-807eec9403a5" />
+
+<img width="743" height="384" alt="image" src="https://github.com/user-attachments/assets/bd28b22c-799b-4423-9233-c8254407c84b" />
+
+<img width="667" height="407" alt="image" src="https://github.com/user-attachments/assets/952e9802-8e8f-4afe-bf2f-fee2009abe61" />
+
+
+
+
+
 
 
 
