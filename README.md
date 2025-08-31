@@ -6,19 +6,19 @@ This project implements an end-to-end image retrieval and explanation pipeline u
 📦 project-root
 
 ├── 📂 app # FastAPI backend + frontend (HTML+JS)
-|
+
       └── 📂 models # Pre-trained models (CLIP, BLIP, etc.)
-| 
+ 
       └── 📄 image_index.faiss # Generated FAISS index
-| 
+ 
       └──📄 metadata.json # Image metadata (id, image path)
-| 
+ 
       └── 📄 requirements.txt # Python dependencies
-| 
+ 
       └── 📄 Dockerfile # Container definition
-| 
+ 
       └── 📂 images # Image dataset
-|
+
 ├── 📂 preprocessing # Scripts for dataset download & embedding generation
 
 ## Architecture
@@ -74,6 +74,28 @@ The system consists of two main pipelines:
      3. Generate FAISS index & metadata:
              
              python generate_embedding_n_metadata.py #This will create the embeddings and store themin vector DB and metadata.json
+
+ ### Image Retrieval & Explanation
+
+      #### Prerequisite: Docker Desktop or DockerHUB
+            
+            1.Download Blip model files from **https://huggingface.co/Salesforce/blip-image-captioning-base/tree/main** and save to  /app/models/blip-captioning-model 
+            
+            2. Go to **https://console.groq.com/keys** and login and get an API key
+            
+            3. Add it in .env under GROQ_API_KEY.
+            
+            4. Build the image:
+                        docker build -t image-search:latest .
+            
+            5. Run the container:
+                        docker run -p 8000:8000 --env-file .env \
+                        -v $PWD/image_index.faiss:/app/image_index.faiss \
+                        -v $PWD/metadata.json:/app/metadata.json \
+                        -v $PWD/models:/app/models  image-search:latest
+
+            6. Open http://localhost:8000 in your browser.
+
 
 
 
