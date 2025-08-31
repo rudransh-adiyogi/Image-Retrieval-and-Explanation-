@@ -2,25 +2,25 @@
 This project implements an end-to-end image retrieval and explanation pipeline using CLIP, FAISS, BLIP, and Groq LLM. The system allows users to query with natural language, retrieve the most relevant images, generate captions, and provide explanations through a FastAPI backend with a simple HTML+JS frontend
 
 ## 📂 Project Structure
-'''
+
 📦 project-root
 
 ├── 📂 app # FastAPI backend + frontend (HTML+JS)
-
- └── 📂 models # Pre-trained models (CLIP, BLIP, etc.)
- 
- └── 📄 image_index.faiss # Generated FAISS index
- 
- └──📄 metadata.json # Image metadata (id, image path)
- 
- └── 📄 requirements.txt # Python dependencies
- 
- └── 📄 Dockerfile # Container definition
- 
- └── 📂 images # Image dataset
-
+|
+      └── 📂 models # Pre-trained models (CLIP, BLIP, etc.)
+| 
+      └── 📄 image_index.faiss # Generated FAISS index
+| 
+      └──📄 metadata.json # Image metadata (id, image path)
+| 
+      └── 📄 requirements.txt # Python dependencies
+| 
+      └── 📄 Dockerfile # Container definition
+| 
+      └── 📂 images # Image dataset
+|
 ├── 📂 preprocessing # Scripts for dataset download & embedding generation
-'''
+
 ## Architecture
 The system consists of two main pipelines:
 
@@ -47,6 +47,34 @@ The system consists of two main pipelines:
    5.	Groq LLM provides explanations for why the image matches.
    6.	API responds with:{"results": [ {"image_path": "...","caption": "...","explanation": "..."} ] }
    7.	Frontend renders results as image cards.
+
+## How to Run
+
+ ### Preprocessing
+ 
+  Create the image dataset. 
+ 
+  #### Prerequisite: Conda environment
+    
+    1. Set the Environment
+            
+            cd preprocessing
+            
+            conda create -n imgsearch python=3.9
+            
+            conda activate imgsearch
+            
+            pip install -r requirements.txt
+
+     
+     2. Run image download script:
+             
+             python download_images.py #This downloads images to /app/images/ folder
+     
+     3. Generate FAISS index & metadata:
+             
+             python generate_embedding_n_metadata.py #This will create the embeddings and store themin vector DB and metadata.json
+
 
 
 
