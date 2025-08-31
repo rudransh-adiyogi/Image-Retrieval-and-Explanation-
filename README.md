@@ -5,12 +5,19 @@ This project implements an end-to-end image retrieval and explanation pipeline u
 '''
 📦 project-root
 ├── 📂 app # FastAPI backend + frontend (HTML+JS)
+
  └── 📂 models # Pre-trained models (CLIP, BLIP, etc.)
+ 
  └── 📄 image_index.faiss # Generated FAISS index
+ 
  └──📄 metadata.json # Image metadata (id, image path)
+ 
  └── 📄 requirements.txt # Python dependencies
+ 
  └── 📄 Dockerfile # Container definition
+ 
  └── 📂 images # Image dataset
+
 ├── 📂 preprocessing # Scripts for dataset download & embedding generation
 '''
 
