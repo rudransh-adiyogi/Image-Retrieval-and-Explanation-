@@ -23,13 +23,20 @@ This project implements an end-to-end image retrieval and explanation pipeline u
 '''
 ## Architecture
 The system consists of two main pipelines:
+
 1. Preprocessing Pipeline
+
    •	CLIP Encoder: Encodes text queries into embeddings.
+
    •	FAISS Index: Stores image embeddings for fast nearest neighbor search.
+
    •	Metadata Store: Maintains mapping of image IDs and paths for retrieval.
+
    <img width="728" height="251" alt="image" src="https://github.com/user-attachments/assets/fdc22918-f156-46dd-b52b-6e98f6dbc3d0" />
 
 2. Image Retrieval & Explanation Flow
+
+   
    <img width="644" height="448" alt="image" src="https://github.com/user-attachments/assets/6f138b1b-d476-4d17-a4c5-d82802b4465c" />
    
    1.	User enters a query on the web UI.
